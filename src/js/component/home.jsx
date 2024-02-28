@@ -35,14 +35,13 @@ const Home = () => {
 					}
 
 				</div>
-				<h1>
+				<h1 class="my-5">
 					Tic Tac Toe <small>in React.js</small>
 				</h1>
-				{/* {this.renderMessage()} */}
 				<div>
 					<button
 						onClick={() => resetGame()}
-						className="btn btn-outline-warning mb-5">Reset</button></div>
+						className="btn btn-outline-warning my-5">Reset Game</button></div>
 
 				<Board
 					mark={mark}
@@ -52,9 +51,12 @@ const Home = () => {
 					setSquareValues={setSquareValues}
 				/>
 				<ChoosePlayer
+					mark={mark}
 					setMark={setMark}
 					setPlayer1={setPlayer1}
 					setPlayer2={setPlayer2}
+					player1={player1}
+					player2={player2}
 				/>
 			</div>
 		</div>

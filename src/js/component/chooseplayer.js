@@ -3,13 +3,11 @@ import React, { useState } from "react";
 
 //create your first component
 const ChoosePlayer = (props) => {
-    const [input1, setInput1] = useState("");
-	const [input2, setInput2] = useState("");
-
+	var { mark, setMark, player1, player2, setPlayer1, setPlayer2 } = props;
 	return (
 		<div className="text-center">
-            <div
-				// style={{ display: props.hide ? "block" : "none" }}
+			<div
+				style={{ display: mark ? "none" : "block" }}
 				id="modal-container">
 				<div className="choose-modal">
 					<h3>Choose Your Weapon</h3>
@@ -17,33 +15,28 @@ const ChoosePlayer = (props) => {
 						<input
 							type="text"
 							placeholder="Player 1 username"
-							onChange={evt => setInput1(evt.target.value)}
+							value={player1}
+							onChange={evt => setPlayer1(evt.target.value)}
 						/>
 						<input
 							type="text"
 							placeholder="Player 2 username"
-							onChange={evt => setInput2(evt.target.value)}
+							value={player2}
+							onChange={evt => setPlayer2(evt.target.value)}
 						/>
 					</div>
 					<div className="button-area">
 						<span
 							onClick={() => {
-								props.setMark("x");
-								props.setPlayer1(input1);
-								props.setPlayer2(input2);
-							}
-							}
+								setMark("x");
+							}}
 							className="x-marker">
 							X
 						</span>
 						<span
-							onClick={() =>
-								{
-									props.setMark("o");
-									props.setPlayer1(input1);
-									props.setPlayer2(input2);
-								}
-							}
+							onClick={() => {
+								setMark("o");
+							}}
 							className="o-marker">
 							O
 						</span>
@@ -57,7 +50,7 @@ const ChoosePlayer = (props) => {
 					</div>
 				</div>
 			</div>
-        </div>
+		</div>
 	);
 };
 

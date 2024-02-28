@@ -88,7 +88,7 @@ html {
   #modal-container{
     position: relative;
     left: 50%;
-    top: 40vh;
+    top: 30vh;
     transform: translate(-50%, -50%);
     width: 70%;
     height: 400px;
